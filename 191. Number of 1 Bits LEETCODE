@@ -1,0 +1,10 @@
+  int hammingWeight(uint32_t n) {
+       uint32_t a=n;signed int cnt=0;
+        while(a!=0){
+           if(a%2!=0){
+               cnt=cnt+1;
+           }
+           a=a>>1;
+        }
+        return cnt;
+    }
