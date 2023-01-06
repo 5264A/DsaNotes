@@ -1,0 +1,9 @@
+//IMPORTANT FOR INTERVIEW
+/* 2=10
+~2=11111.....01
+1 on LSB So -ve Sign:-
+1s compliment=0000000.....10
+2s compliment=00000000......11
+Answer=-3;
+
+*/
