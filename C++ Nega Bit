@@ -1,0 +1,28 @@
+Input:
+F = 2 , S = 5
+Output:
+7
+Explanation:
+2 is represented as 10 in binary and
+5 is represented as 101. Hence negating
+the 2nd bit of 5 from right, thus the
+new number becomes 7 i.e. 111. 
+Example 2:
+
+Input:
+F = 1 , S = 3
+Output:
+2
+Explanation:
+1-1 and 3-11 in binary, thus negating
+1st bit of 3 from right we get 10 i.e. 2. 
+
+/////////////////////////////////////ANSWER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+public:
+    int negaBit(int F , int S) {
+      return F^S;
+    }
+};
