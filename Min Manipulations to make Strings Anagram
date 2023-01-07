@@ -1,0 +1,54 @@
+Example 1:
+
+Input:
+S1 = "aba", S2 = "baa", N = 3
+Output: 0
+Explanation: Both the strings are already
+anagrams.
+â€‹Example 2:
+
+Input: 
+S1 = "ddcf", S2 = "cedk", N = 4
+Output: 2
+Explanation: We can change 'e' and 'k' in
+S2 to 'd' and 'f' to make both the strings
+anagram. 
+///////////////////////////////Answer\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+int minManipulation (int N, string S1, string S2)
+{
+    sort(S1.begin(),S1.end());
+
+    sort(S2.begin(),S2.end());
+    
+    int count=0,p=0,q=0;
+
+    while(p<N && q<N)
+
+    {
+
+        if(S1[p]<S2[q])
+
+            p++;
+
+        if(S1[p]>S2[q])
+
+            q++;
+
+        if(S1[p]==S2[q])
+
+        {
+
+            count++;
+
+            p++;q++;
+
+        } 
+
+    }
+
+    return N-count;
+    
+    
+}
