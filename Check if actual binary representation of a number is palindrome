@@ -1,0 +1,39 @@
+Input:
+N = 5
+Output: 1
+Explanation: The Binary Representation of
+5 is 101 which is a Palindrome.
+
+â€‹Example 2:
+
+Input: 
+N = 10
+Output: 0
+Explanation: The Binary Representation of
+10 is 1010 which is not a Palindrome.
+
+
+                        ///////////////////////////////////////ANSWER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+long long int ans=0, cnt=0;
+	string str="";
+    while(n!=0){
+        int bit=n%2;
+        
+        str=str+to_string(bit);
+        ans=ans+bit*pow(10,cnt);
+       
+        cnt++;
+       n=n/2;
+
+    }
+    int s=0;int e=str.size()-1;
+    while(s<=e){
+        if(str[s]!=str[e]){
+            return 0;
+            
+        }e--;s++;
+    }return 1;
+    
+    
