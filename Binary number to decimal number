@@ -1,0 +1,23 @@
+  Example 1:
+
+Input: B = 10001000
+Output: 136
+Example 2:
+
+Input: B = 101100
+Output: 44
+
+////////////////////////////////////////////////////////////////////////
+  
+  
+  
+  
+  int binary_to_decimal(string str) {
+       int n=str.size();int ans=0;
+       for(int i=n-1;i>=0;i--){
+           int bit=str[i]-48;
+           ans=ans+pow(2,n-i-1)*bit;
+        
+       }
+       return ans;
+    }
