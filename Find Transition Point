@@ -1,0 +1,40 @@
+
+
+Example 1:
+
+Input:
+N = 5
+arr[] = {0,0,0,1,1}
+Output: 3
+Explanation: index 3 is the transition 
+point where 1 begins.
+
+Example 2:
+
+Input:
+N = 4
+arr[] = {0,0,0,0}
+Output: -1
+Explanation: Since, there is no "1",
+the answer is -1.
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+int s=0;
+ int e=n-1;
+ int mid=s+(e-s)/2;
+ while(s<=e){
+     if(arr[mid]==1 && arr[mid-1]==0){
+         return mid;
+     }
+     else if(arr[mid-1]==1){
+         e=mid-1;
+     }
+     else{
+         s=mid+1;
+     }
+     mid=s+(e-s)/2;
+ }
+ return -1;
