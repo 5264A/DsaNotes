@@ -147,3 +147,8 @@ pair<int, int> firstAndLastPosition(vector<int>& arr, int n, int k)
    return p;
 
 }
+
+>>>>>>>>>>>>>>>>>>>>>>
+Total Number of Occurence can be as :=
+total=lastOcc-firstOcc+1;
+return total;
