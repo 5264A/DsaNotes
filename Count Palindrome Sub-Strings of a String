@@ -1,0 +1,53 @@
+Given a string, the task is to count all palindromic sub-strings present in it. Length of palindrome sub-string must be greater than or equal to 2. 
+
+Example
+
+Input
+N = 5
+str = "abaab"
+Output
+3
+Explanation:
+All palindrome substring are : "aba" , "aa" , "baab"
+Example
+
+Input
+N = 7
+str = "abbaeae"
+Output
+4
+Explanation:
+All palindrome substring are : "bb" , "abba" ,"aea",
+"eae"
+Expected Time Complexity : O(|S|2)
+Expected Auxilliary Space : O(|S|2)
+
+Constraints:
+
+2<=|S|<=500
+.......................................................................................................................................................................
+
+
+
+
+
+bool ispelindrome(char str[],int s,int e){
+   while(s<=e){
+        if(str[s]!=str[e]){
+            return false;
+        }s++;
+        e--;
+    }return true;
+}
+
+int CountPS(char S[], int n)
+{int cnt=0;
+   for(int i=0;i<n;i++){
+       for(int j=i+1;j<n;j++){
+           if(ispelindrome(S,i,j)){
+               cnt++;
+           }
+       }
+   }return cnt;
+    
+}
