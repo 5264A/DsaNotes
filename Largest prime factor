@@ -70,3 +70,16 @@ bool isprime(long long int N){
        
          
     }
+    
+    .................................................................
+    2nd ansdeasy solution
+         int i=2;
+       while(n!=1){
+           if(n%i==0){
+               n/=i;
+           }
+           else{
+               i++;
+           }
+       }
+       return (long long int)i;
