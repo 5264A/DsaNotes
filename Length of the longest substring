@@ -1,0 +1,50 @@
+Given a string S, find the length of the longest substring without repeating characters.
+
+
+Example 1:
+
+Input:
+S = "geeksforgeeks"
+Output:
+7
+Explanation:
+Longest substring is
+"eksforg".
+Example 2:
+
+Input:
+S = "abdefgabef"
+Output:
+6
+Explanation:
+Longest substring are
+"abdefg" , "bdefga" and "defgab".
+ 
+
+Your Task:
+You don't need to take input or print anything. Your task is to complete the function longestUniqueSubsttr() which takes a string S as and returns the length of the longest substring.
+
+ 
+
+Expected Time Complexity: O(|S|).
+Expected Auxiliary Space: O(K) where K is constant.
+
+.............................................................................................................................................................
+
+  int longestUniqueSubsttr(string S){
+        
+       int maxi=INT_MIN;
+      int i=0,j=0;
+      int n=S.size();
+      int arr[26]={0};
+       while(j<n){
+          arr[S[j]-'a']++;
+          while(i<n && arr[S[j]-'a']!=1){
+              arr[S[i]-'a']--;
+              i++;
+          }
+          maxi=max(maxi,j-i+1);
+          j++;
+       }
+       return maxi;
+    }
