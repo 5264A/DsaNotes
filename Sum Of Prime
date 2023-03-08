@@ -1,0 +1,67 @@
+ Given a number N,  find if N can be expressed as a + b  such that a and b are prime.
+Note: If [a, b] is one solution with a <= b, and [c, d] is another solution with c <= d, and a < c then  [a, b] is considered as our answer.
+
+ 
+
+Example 1:
+
+Input:
+N = 8
+Output:
+3 5
+Explanation:
+3 and 5 are both prime and they
+add up to 8.
+Example 2:
+
+Input:
+N = 3
+Output:
+-1 -1
+Explanation:
+There are no solutions to the number 3.
+ 
+
+Your Task:
+You don't need to read input or print anything. Your task is to complete the function getPrimes() which takes an integer n as input and returns (a,b) as an array of size 2. 
+Note: If no value of (a,b) satisfy the condition return (-1,-1) as an array of size 2.
+
+ 
+
+Expected Time Complexity: O(N*loglog(N))
+Expected Auxiliary Space: O(N)
+
+ 
+
+Constraints:
+2 <= N <= 106
+...............................................................................................................
+public:
+    bool isprime(int n){
+        if(n==0 ||n ==1){
+            return false;
+        }
+        else if(n==2){
+            return true;
+        }
+        for(int i=2;i*i<=n;i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    vector<int> getPrimes(int N) {
+        vector<int>v;
+        for(int i=1;i<=N/2;i++){
+            if(isprime(i)&& isprime(N-i)){
+                v.push_back(i);
+                v.push_back(N-i);
+            }
+        }
+        if(v.empty()){
+            v.push_back(-1);
+            v.push_back(-1);
+        }
+        return v;
+    }
