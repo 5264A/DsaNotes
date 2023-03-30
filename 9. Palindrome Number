@@ -1,0 +1,85 @@
+Given an integer x, return true if x is a 
+palindrome
+, and false otherwise.
+
+ 
+
+Example 1:
+
+Input: x = 121
+Output: true
+Explanation: 121 reads as 121 from left to right and from right to left.
+Example 2:
+
+Input: x = -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+Example 3:
+
+Input: x = 10
+Output: false
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+ 
+
+Constraints:
+
+-231 <= x <= 231 - 1
+ .................................................................................................................
+ 1st solution:-
+ O(n) time and space complexity:
+ 
+ class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0){
+            return false;
+        }
+        vector<int>v;
+        while(x!=0){
+            int rem=x%10;
+            v.push_back(rem);
+            x=x/10;
+        }
+        int e=v.size()-1;
+        int s=0;
+        while(s<=e){
+            if(v[s]!=v[e]){
+                return false;
+            }
+            s++;
+            e--;
+        }
+        return true;
+    }
+};
+
+.......................................................................................................................
+Time=O(n)
+Space=O(1):
+
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+         if(x<0){
+            return false;
+        }
+       int new1=x;
+       long long int ans=0;/////IMP Take Long Long and Not Need To Convert in Int Beconz we compare int as rem ;;
+       while(x!=0){
+           int rem=x%10;
+           ans=ans*10+rem;
+           x=x/10;
+       }
+       while(ans!=0){
+           int rem1=new1%10;
+           int rem2=ans%10;
+           if(rem1!=rem2){
+               return false;
+           }
+           new1=new1/10;
+           ans=ans/10;
+       }
+       return true;
+    }
+};
